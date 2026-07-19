@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>AgenticURL Pro</title></head>
+<body>
+    <h1>AgenticURL Pro - SSRF Protected</h1>
+
+    <form action="/shorten" method="post">
+        <input type="text" name="url" placeholder="Enter http:// or https:// URL" required style="width:400px">
+        <button type="submit">Shorten</button>
+    </form>
+
+    {% if error %}
+        <p style="color:red"><b>Error:</b> {{ error }}</p>
+    {% endif %}
+    
+    {% if result %}
+        <p style="color:green"><b>Success:</b> <a href="{{ result }}">{{ result }}</a></p>
+    {% endif %}
+
+    <br><a href="/admin">Admin Dashboard</a>
+</body>
+</html>
