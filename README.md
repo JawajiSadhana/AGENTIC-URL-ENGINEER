@@ -32,12 +32,36 @@ The agent in `/agent` folder can:
 1.  **Clone the repo**
     ```bash
     git clone https://github.com/your-username/Agentic-URL-Engineer.git
-    cd Agentic-URL-EngineerInstall dependenciesbash    pip install fastapi uvicorn sqlalchemy pydantic pydantic-settings slowapi python-multipart pytest httpxRun the Appbash    uvicorn app.main:app --reload --port 8001Open: http://localhost:8001Run Testsbash    pytest -vHow to Use the Agent
-Go to /agent folder and run:bashcd agent
-python run.pyExample 1: Generate Full AppjavascriptEnter requirement: Build a url shortener with analytics
-Approve this plan? [y/n]: yIt will generate all files in /appExample 2: Add Feature to Existing App - BrownfieldjavascriptEnter requirement: Add tests to existing app
-Approve this plan? [y/n]: yIt will create tests/test_api.py and pytest.iniExample 3: Add AnalyticsjavascriptEnter requirement: Add analytics to existing app
-Approve this plan? [y/n]: yAPI EndpointsMethodEndpointDescriptionGET/Home page with formPOST/shortenCreate short URL. SSRF protectedGET/{short}Redirect to original URLGET/healthHealth checkGET/adminAdmin Dashboard HTMLGET/api/v1/analytics/{code}Get analytics JSONProject StructurejavascriptAgentic-URL-Engineer/
+    
+    cd Agentic-URL-EngineerInstall
+    dependencies
+    bash    pip install fastapi uvicorn sqlalchemy pydantic pydantic-settings slowapi python-multipart pytest httpx
+    Run the Appbash    uvicorn app.main:app --reload --port 8001
+    Open: http://localhost:8001
+    Run Tests
+    bash    pytest -v
+    How to Use the Agent
+
+Go to /agent folder and run:bash
+cd agent
+python run.py
+
+Example 1: Generate Full Appjavascript
+Enter requirement: 
+Build a url shortener with analytics
+Approve this plan? [y/n]: yIt will generate all files in /app
+
+Example 2: Add Feature to Existing App - Brownfieldjavascript
+Enter requirement: Add tests to existing app
+Approve this plan? [y/n]: y]
+It will create tests/test_api.py and pytest.ini
+
+Example 3: Add Analyticsjavascript
+Enter requirement: Add analytics to existing app
+Approve this plan? [y/n]: y
+API EndpointsMethodEndpointDescription
+
+Agentic-URL-Engineer/
 ├── agent/                  # The AI Agent
 │   ├── planner.py
 │   ├── executor.py
@@ -54,5 +78,10 @@ Approve this plan? [y/n]: yAPI EndpointsMethodEndpointDescriptionGET/Home page w
 ├── tests/                  # Pytest Tests
 ├── urls.db                 # SQLite DB
 ├── logs/traces.jsonl       # Agent Execution Logs
-└── README.mdSecurity Features
-SSRF Block: Only allows http and https public URLsRate Limit: Prevents abuseInput Validation: Pydantic + Custom validatorsAgent Guardrails: validator.py blocks dangerous commands
+└── README.md
+
+Security Features
+SSRF Block: Only allows http and https public URLs
+Rate Limit: Prevents abuse
+Input Validation: Pydantic + Custom validators
+Agent Guardrails: validator.py blocks dangerous commands
