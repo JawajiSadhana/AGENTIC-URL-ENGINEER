@@ -1,0 +1,6 @@
+{
+  "plan": "Build Agentic URL Shortener with Service+Repo pattern",
+  "artifacts": ["app/main.py", "app/services/url_service.py", "app/repositories/url_repo.py", "app/middleware/"],
+  "risks": ["SSRF if URL not validated", "Rate limit bypass"],
+  "mitigations": ["ipaddress check in url_service", "slowapi middleware", "validator guardrails"]
+}
